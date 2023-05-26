@@ -1,1 +1,20 @@
-<p>employee-list works!</p>
+<h2>Employee List</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employees" [class.selected]="employee === selectedEmployee" (click)="selectEmployee(employee)">
+      <td>{{ employee.id }}</td>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.email }}</td>
+      <td>{{ employee.position }}</td>
+    </tr>
+  </tbody>
+</table>
